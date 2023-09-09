@@ -35,6 +35,7 @@ def update(todo_id):
     # update an existing item
     todo = Todo.query.filter_by(id=todo_id).first() # we query through our list/db by the todo_id, we only need to return the first one
     todo.complete = not todo.complete # we set this to the opposite so that we can go back to either complete or not complete
+       
     db.session.commit() # sends/commits the information to the database
     return redirect(url_for("index")) # after adding something to the list, redirect to the "index" url to refresh page
 
@@ -49,7 +50,7 @@ def delete(todo_id):
 
 if __name__ == "__main__":
     db.create_all()
-
+    
     app.run(debug=True)
 
     #This is a test for the new branch
