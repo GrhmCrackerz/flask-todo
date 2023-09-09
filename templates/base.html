@@ -9,23 +9,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
 </head>
-<body>
+<body class="ui grey inverted segment">
 
     <div style="margin-top: 50px" class="ui container">
 
-    <h1 class="ui center aligned header">My Todo List!</h1>
+    <h1 class="ui center aligned header ">My Todo List!</h1>
 
-    <form class="ui form" action="/add" method="post">
+    <form class="ui form inverted segment" action="/add" method="post">
         <div class="field">
             <label for="title">Todo Title</label>
             <input type="text" name="title" placeholder="Enter Todo...">
             <br>
-            <button class="ui blue button" type="submit">Add</button>
+            <button class="ui inverted button huge" type="submit">Add</button>
         </div>
     </form>
 
     {% for todo in todo_list %}
-    <div class="ui segment">
+    <div class="ui segment inverted">
         <p class="ui big header"> {{ todo.id }} | {{ todo.title }} </p>
 
         {% if todo.complete == False %}
